@@ -672,7 +672,7 @@ GameObject:
   - component: {fileID: 545305643}
   - component: {fileID: 545305642}
   - component: {fileID: 545305641}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -801,7 +801,7 @@ GameObject:
   - component: {fileID: 557574050}
   - component: {fileID: 557574049}
   - component: {fileID: 557574048}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Sphere (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1160,7 +1160,7 @@ GameObject:
   - component: {fileID: 922879912}
   - component: {fileID: 922879911}
   - component: {fileID: 922879910}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Sphere (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1291,7 +1291,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1162569326}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Row1 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1328,7 +1328,7 @@ GameObject:
   - component: {fileID: 1183079587}
   - component: {fileID: 1183079586}
   - component: {fileID: 1183079585}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Sphere (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1457,7 +1457,7 @@ GameObject:
   - component: {fileID: 1299975784}
   - component: {fileID: 1299975783}
   - component: {fileID: 1299975782}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1586,7 +1586,7 @@ GameObject:
   - component: {fileID: 1315087891}
   - component: {fileID: 1315087890}
   - component: {fileID: 1315087889}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1805,7 +1805,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1386817569}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Row1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1999,7 +1999,7 @@ GameObject:
   - component: {fileID: 1658856233}
   - component: {fileID: 1658856232}
   - component: {fileID: 1658856231}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Sphere (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2124,7 +2124,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1668715193}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Row1 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2159,8 +2159,10 @@ GameObject:
   - component: {fileID: 1681699505}
   - component: {fileID: 1681699504}
   - component: {fileID: 1681699507}
+  - component: {fileID: 1681699509}
+  - component: {fileID: 1681699508}
   - component: {fileID: 1681699506}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: XR Rig
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -2193,7 +2195,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1681699503}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.028, z: -1.46}
+  m_LocalPosition: {x: 0, y: 0.33, z: -1.46}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1457776744}
@@ -2212,7 +2214,7 @@ CharacterController:
   m_Enabled: 1
   serializedVersion: 2
   m_Height: 2
-  m_Radius: 0.5
+  m_Radius: 0.25
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
@@ -2232,6 +2234,43 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Timeout: 10
   m_XRRig: {fileID: 1681699504}
+--- !u!114 &1681699508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1681699503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc4f2c0214c9b494fa7eb5b8b2c02885, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_System: {fileID: 1681699507}
+  m_TurnUsage: 0
+  m_Controllers:
+  - {fileID: 104082860}
+  m_TurnAmount: 45
+  m_DebounceTime: 0.5
+  m_DeadZone: 0.75
+--- !u!114 &1681699509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1681699503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16599dd03645f5748bee449b580b55a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_System: {fileID: 1681699507}
+  speed: 1
+  gravityMultiplier: 1
+  controllers:
+  - {fileID: 1592792179}
+  characterController: {fileID: 1681699506}
 --- !u!1 &1688926704
 GameObject:
   m_ObjectHideFlags: 0
@@ -2245,7 +2284,7 @@ GameObject:
   - component: {fileID: 1688926708}
   - component: {fileID: 1688926707}
   - component: {fileID: 1688926706}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Sphere (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2489,7 +2528,7 @@ GameObject:
   - component: {fileID: 1914516198}
   - component: {fileID: 1914516197}
   - component: {fileID: 1914516196}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Sphere (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

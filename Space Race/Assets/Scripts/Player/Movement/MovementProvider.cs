@@ -5,6 +5,8 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class MovementProvider : LocomotionProvider
 {
+    [SerializeField] private float speed = 1.0f;
+    [SerializeField] private float gravityMultiplier = 1.0f;
     [SerializeField] private List<XRController> controllers = null;
 
     [SerializeField] private CharacterController characterController = null;
@@ -21,9 +23,11 @@ public class MovementProvider : LocomotionProvider
         PositionController();
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         PositionController();
+        CheckForInput();
+        ApplyGravity();
     }
 
     private void PositionController()
@@ -47,25 +51,42 @@ public class MovementProvider : LocomotionProvider
 
     private void CheckForInput()
     {
-
+        foreach (XRController controller in controllers)
+        {
+            if (controller.enableInputActions)
+            {
+                CheckForMovement(controller.inputDevice);
+            }
+        }
     }
 
     private void CheckForMovement(InputDevice device)
     {
-
+        if (device.TryGetFeatureValue(CommonUsages.primary2DAxis, out Vector2 position))
+        {
+            StartMove(position);
+        }
     }
 
     private void StartMove(Vector2 position)
     {
         // Apply the touch position to the head's forward Vector
+        Vector3 direction = new Vector3(position.x, 0, position.y);
+        Vector3 headRotation = new Vector3(0, head.transform.eulerAngles.y, 0);
 
         // Rotate the input direction by the horizontal head rotation
+        direction = Quaternion.Euler(headRotation) * direction;
 
         // Apply speed and move
+        Vector3 movement = direction * speed;
+        characterController.Move(movement * Time.deltaTime);
     }
 
     private void ApplyGravity()
     {
+        Vector3 gravity = new Vector3(0, Physics.gravity.y * gravityMultiplier, 0);
+        gravity.y *= Time.deltaTime;
 
+        characterController.Move(gravity * Time.deltaTime);
     }
 }

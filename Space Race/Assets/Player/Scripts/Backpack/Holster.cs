@@ -26,7 +26,7 @@ public class Holster : MonoBehaviour
 
         var step = finalRotationSpeed * Time.deltaTime;
 
-        //transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.Euler(0, _headAnchor.transform.eulerAngles.y, 0), step);
-        Quaternion.Lerp(transform.rotation, Quaternion.RotateTowards(transform.rotation, Quaternion.Euler(0, _headAnchor.transform.eulerAngles.y, 0), step), Time.deltaTime * _turnSmoothing);
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.Euler(0, _headAnchor.transform.eulerAngles.y, 0), step);
+        //Quaternion.Lerp(transform.rotation, Quaternion.RotateTowards(transform.rotation, Quaternion.Euler(0, _headAnchor.transform.eulerAngles.y, 0), step), Time.deltaTime * _turnSmoothing);
     }
 }

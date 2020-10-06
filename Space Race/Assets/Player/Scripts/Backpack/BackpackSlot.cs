@@ -23,7 +23,7 @@ public class BackpackSlot : XRSocketInteractor
         base.OnSelectEnter(interactable);
         _inSocketScale = _inSocket.transform.localScale;
         if (_inSocket.tag != "Player")
-            _inSocket.transform.localScale = gameObject.transform.localScale;
+            _inSocket.transform.localScale = _inSocket.transform.localScale / 2;
             
     }
 
@@ -36,7 +36,8 @@ public class BackpackSlot : XRSocketInteractor
 
     private void OnTriggerStay(Collider other)
     {
-        _inSocket = other.gameObject;
+        if (other.gameObject.tag != "Player")
+            _inSocket = other.gameObject;
     }
 
 

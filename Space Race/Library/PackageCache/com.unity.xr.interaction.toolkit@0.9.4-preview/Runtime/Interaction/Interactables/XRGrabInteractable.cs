@@ -176,7 +176,7 @@ namespace UnityEngine.XR.Interaction.Toolkit
                             }
                             else if (m_CurrentMovementType == MovementType.VelocityTracking)
                             {
-                                PerformVelocityTrackingUpdate(Time.unscaledDeltaTime * 3f, updatePhase);
+                                PerformVelocityTrackingUpdate(Time.unscaledDeltaTime, updatePhase);
                             }
                         }
                     }

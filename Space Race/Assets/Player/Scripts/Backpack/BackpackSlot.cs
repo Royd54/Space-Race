@@ -11,6 +11,8 @@ public class BackpackSlot : XRSocketInteractor
     private Vector3 _inSocketScale = Vector3.zero;
     private XRSocketInteractor _socket = null;
 
+    [SerializeField] private AudioClip bagSlotFX;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,8 +25,8 @@ public class BackpackSlot : XRSocketInteractor
         base.OnSelectEnter(interactable);
         _inSocketScale = _inSocket.transform.localScale;
         if (_inSocket.tag != "Player")
-            _inSocket.transform.localScale = _inSocket.transform.localScale / 2;
-            
+            AudioManager.Instance.PlaySFX(bagSlotFX);
+            _inSocket.transform.localScale = _inSocket.transform.localScale / 2;    
     }
 
     protected override void OnSelectExit(XRBaseInteractable interactable)
@@ -39,6 +41,4 @@ public class BackpackSlot : XRSocketInteractor
         if (other.gameObject.tag != "Player")
             _inSocket = other.gameObject;
     }
-
-
 }

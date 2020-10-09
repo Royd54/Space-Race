@@ -9,6 +9,7 @@ public class PhysicsProjectile : Projectile
     private Rigidbody rigidBody;
 
     [SerializeField] private GameObject _explosionFX;
+    [SerializeField] private AudioClip _explosionSoundFX;
 
     private void Awake()
     {
@@ -30,6 +31,7 @@ public class PhysicsProjectile : Projectile
     private void OnTriggerEnter(Collider other)
     {
         Instantiate(_explosionFX, transform.position, other.gameObject.transform.rotation);
+        AudioManager.Instance.PlaySFX(_explosionSoundFX);
         Destroy(gameObject);
         ITakeDamage[] damageTakers = other.GetComponentsInParent<ITakeDamage>();
 

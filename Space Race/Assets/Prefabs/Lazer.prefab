@@ -208,3 +208,4 @@ MonoBehaviour:
   _lifeTime: 5
   _explosionFX: {fileID: 8865585435507283278, guid: 8a18a65a10560ef43b0e18da3254d49f,
     type: 3}
+  _explosionSoundFX: {fileID: 8300000, guid: 0784c89373f2ace49b7cffd103e5ea24, type: 3}

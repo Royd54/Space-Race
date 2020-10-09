@@ -7,6 +7,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class Pistol : Weapon
 {
     [SerializeField] private Projectile _bulletPrefab;
+    [SerializeField] private AudioClip _shootFX;
 
     protected override void StartShooting(XRBaseInteractor interactor)
     {
@@ -18,6 +19,7 @@ public class Pistol : Weapon
     {
         base.Shoot();
         Projectile projectileInstance = Instantiate(_bulletPrefab, bulletSpawn.position, bulletSpawn.rotation);
+        AudioManager.Instance.PlaySFX(_shootFX);
         projectileInstance.Init(this);
         projectileInstance.Launch();
     }

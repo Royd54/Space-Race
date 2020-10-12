@@ -6,8 +6,8 @@ using System.Security.Permissions;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
-[RequireComponent(typeof(Rigidbody))]
-[RequireComponent(typeof(XRGrabInteractable))]
+//[RequireComponent(typeof(Rigidbody))]
+//[RequireComponent(typeof(XRGrabInteractable))]
 public class Weapon : MonoBehaviour
 {
     [SerializeField] protected float shootingForce;
@@ -20,17 +20,21 @@ public class Weapon : MonoBehaviour
 
     protected virtual void Awake()
     {
-        _interactableWeapon = GetComponent<XRGrabInteractable>();
+        if(gameObject.layer != 13) { _interactableWeapon = GetComponent<XRGrabInteractable>(); }
+        
         _rigidBody = GetComponent<Rigidbody>();
         SetupInteractableWeaponEvents();
     }
 
     private void SetupInteractableWeaponEvents()
     {
-        //interactableWeapon.onSelectEnter.AddListener(PickUpWeapon);
-        //interactableWeapon.onSelectExit.AddListener(DropWeapon);
-        _interactableWeapon.onActivate.AddListener(StartShooting);
-        _interactableWeapon.onDeactivate.AddListener(StopShooting);
+        if (gameObject.layer != 13)
+        {
+            //interactableWeapon.onSelectEnter.AddListener(PickUpWeapon);
+            //interactableWeapon.onSelectExit.AddListener(DropWeapon);
+            _interactableWeapon.onActivate.AddListener(StartShooting);
+            _interactableWeapon.onDeactivate.AddListener(StopShooting);
+        }
     }
 
    /* private void PickUpWeapon(XRBaseInteractor interactor)

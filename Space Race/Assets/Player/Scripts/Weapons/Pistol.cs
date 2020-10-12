@@ -24,6 +24,15 @@ public class Pistol : Weapon
         projectileInstance.Launch();
     }
 
+    public void ShootForAI(Vector3 player)
+    {
+        bulletSpawn.transform.LookAt(player);
+        Projectile projectileInstance = Instantiate(_bulletPrefab, bulletSpawn.position, bulletSpawn.rotation);
+        AudioManager.Instance.PlaySFX(_shootFX);
+        projectileInstance.Init(this);
+        projectileInstance.Launch();
+    }
+
     protected override void StopShooting(XRBaseInteractor interactor)
     {
         base.StopShooting(interactor);

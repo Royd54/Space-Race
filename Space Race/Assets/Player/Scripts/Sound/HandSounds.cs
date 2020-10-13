@@ -44,7 +44,7 @@ public class HandSounds : XRDirectInteractor
     {
         if (!AudioManager.Instance.MusicIsPlaying())
         {
-           // AudioManager.Instance.PlayMusicWithFade(_chosenSong);
+            AudioManager.Instance.PlayMusicWithFade(_chosenSong);
         }
     }
 }

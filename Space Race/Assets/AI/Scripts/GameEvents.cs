@@ -20,4 +20,13 @@ public class GameEvents : MonoBehaviour
             onEnemyDeath();
         }
     }
+
+    public event Action onSlomo;
+    public void Slomo()
+    {
+        if (onSlomo != null)
+        {
+            onSlomo();
+        }
+    }
 }

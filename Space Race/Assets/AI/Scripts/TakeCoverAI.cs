@@ -43,6 +43,10 @@ public class TakeCoverAI : MonoBehaviour, ITakeDamage
     [SerializeField] private GameObject _bulletPrefab;
     [SerializeField] private ParticleSystem _bloodSplatterFX;
     public float health;
+    private bool _isDead = false;
+
+    [SerializeField] private Collider _maincollider;
+    public Collider[] allcolliders;
 
     private bool RandomPoint(Vector3 center, float rangeRandPoint, out Vector3 resultCover)
     {
@@ -79,11 +83,15 @@ public class TakeCoverAI : MonoBehaviour, ITakeDamage
 
     private void Update()
     {
-        if (Input.GetKey(KeyCode.Space)) health -= 100;
-        if (health <= 0)
+        if (Input.GetKeyDown(KeyCode.Space)) health -= 100;
+        if (health <= 0 && _isDead == false)
         {
-            GameEvents.instance.EnemyDeath();
-            Destroy(gameObject);
+            if (Random.Range(0, 1f) > 0.5f)
+            {
+                GameEvents.instance.EnemyDeath();
+                GameEvents.instance.Slomo();
+            }
+            EnableRagdoll(true);
         }
 
         if (_nav.isActiveAndEnabled)
@@ -212,10 +220,14 @@ public class TakeCoverAI : MonoBehaviour, ITakeDamage
     public void TakeDamage(Weapon weapon, Projectile projectile, Vector3 contactPoint)
     {
         health -= weapon.GetDamage();
-
         if (health <= 0)
         {
-            GameEvents.instance.EnemyDeath();
+            if (Random.Range(0, 1f) > 0.5f)
+            {
+                GameEvents.instance.EnemyDeath();
+                GameEvents.instance.Slomo();
+            }
+            EnableRagdoll(true);
             Destroy(gameObject);
         }
         else
@@ -224,5 +236,18 @@ public class TakeCoverAI : MonoBehaviour, ITakeDamage
             effect.Stop();
             effect.Play();
         }
+    }
+
+    private void EnableRagdoll(bool isRagdoll)
+    {
+        _isDead = true;
+
+        foreach (var col in allcolliders) col.enabled = isRagdoll;
+
+        _maincollider.enabled = !isRagdoll;
+        GetComponent<Rigidbody>().useGravity = !isRagdoll;
+        GetComponent<Animator>().enabled = !isRagdoll;
+
+        Destroy(gameObject, 5);
     }
 }

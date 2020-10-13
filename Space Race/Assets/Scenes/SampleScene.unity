@@ -303,7 +303,7 @@ MonoBehaviour:
   _enemyPrefab: {fileID: 2203397264550013330, guid: 403d7e0cffba08b4590e78f3dbf85433,
     type: 3}
   _spawnInterval: 10
-  _maxEnemiesNumber: 2
+  _maxEnemiesNumber: 1
   _player: {fileID: 1681699510}
   _enemyMultiplier: 1.5
   _spawnIntervalMultiplier: 0.8
@@ -556,7 +556,7 @@ MonoBehaviour:
   _pickupSoundFX: {fileID: 8300000, guid: 635ee8ac286a5d24396c6eff948dd8ad, type: 3}
   _bagGrabFX: {fileID: 8300000, guid: dd103e965e5b4f849ad9f1bd08bc08cb, type: 3}
   _bagSlotFX: {fileID: 8300000, guid: e5f4a7abab039494c9522a6f2a1a16d5, type: 3}
-  _chosenSong: {fileID: 8300000, guid: 07af11fc23ac705488d14053dd58e6bd, type: 3}
+  _chosenSong: {fileID: 8300000, guid: fb3340f7a6ce0ce419285f56bdbd3d13, type: 3}
 --- !u!135 &104082862
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3967,6 +3967,51 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 978454065}
   m_Mesh: {fileID: 4300000, guid: b4ab5a0c8e9afaf4cac0baaee1cd20a4, type: 3}
+--- !u!1 &989272751
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 989272753}
+  - component: {fileID: 989272752}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &989272752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 989272751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc4702021ba14294fb1a742ebc489773, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _slowdownFactor: 0.4
+  _slowdownLength: 15
+--- !u!4 &989272753
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 989272751}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -268.71564, y: -244.2747, z: -78.58247}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1085410529
 GameObject:
   m_ObjectHideFlags: 0
@@ -5089,7 +5134,7 @@ MonoBehaviour:
   _pickupSoundFX: {fileID: 8300000, guid: 635ee8ac286a5d24396c6eff948dd8ad, type: 3}
   _bagGrabFX: {fileID: 8300000, guid: dd103e965e5b4f849ad9f1bd08bc08cb, type: 3}
   _bagSlotFX: {fileID: 8300000, guid: e5f4a7abab039494c9522a6f2a1a16d5, type: 3}
-  _chosenSong: {fileID: 8300000, guid: 07af11fc23ac705488d14053dd58e6bd, type: 3}
+  _chosenSong: {fileID: 8300000, guid: fb3340f7a6ce0ce419285f56bdbd3d13, type: 3}
 --- !u!135 &1592792181
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -6221,6 +6266,8 @@ MonoBehaviour:
   _bloodSplatterFX: {fileID: 198157190901592544, guid: a1ff4ad1c15edf34290f004078ae88bd,
     type: 3}
   health: 100
+  _maincollider: {fileID: 0}
+  allcolliders: []
 --- !u!195 &1938913084
 NavMeshAgent:
   m_ObjectHideFlags: 0

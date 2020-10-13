@@ -51,6 +51,11 @@ public class AudioManager : MonoBehaviour
         musicSource2.loop = true;
     }
 
+    private void LateUpdate()
+    {
+        CheckTimeScale();
+    }
+
     public void PlayMusic(AudioClip musicClip)
     {
         AudioSource activeSource = (firstMusicSourceIsPlaying) ? musicSource : musicSource2;
@@ -159,5 +164,14 @@ public class AudioManager : MonoBehaviour
     public void SetSFXVolume(float volume)
     {
         sfxSource.volume = volume;
+    }
+
+    public void CheckTimeScale()
+    {
+        musicSource.pitch = Time.timeScale;
+        musicSource2.pitch = Time.timeScale;
+        sfxSource.pitch = Time.timeScale;
+        sfxWalklingSource.pitch = Time.timeScale;
+        sfxSlidingSource.pitch = Time.timeScale;
     }
 }

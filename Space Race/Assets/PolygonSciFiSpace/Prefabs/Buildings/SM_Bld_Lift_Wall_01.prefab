@@ -15,8 +15,8 @@ GameObject:
   m_Name: SM_Bld_Lift_Wall_Door_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &4997712868620684
 Transform:
@@ -96,8 +96,8 @@ GameObject:
   m_Name: SM_Bld_Lift_Wall_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &4314020795926954
 Transform:
@@ -209,8 +209,8 @@ GameObject:
   m_Name: SM_Bld_Lift_Wall_Door_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &4454580006987200
 Transform:

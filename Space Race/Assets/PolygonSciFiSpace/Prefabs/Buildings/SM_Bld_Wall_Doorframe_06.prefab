@@ -15,8 +15,8 @@ GameObject:
   m_Name: SM_Bld_Wall_Door_06
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &4530545607528316
 Transform:
@@ -95,8 +95,8 @@ GameObject:
   m_Name: SM_Bld_Wall_Doorframe_06
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &4325976908142352
 Transform:

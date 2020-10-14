@@ -83,17 +83,6 @@ public class TakeCoverAI : MonoBehaviour, ITakeDamage
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space)) health -= 100;
-        if (health <= 0 && _isDead == false)
-        {
-            if (Random.Range(0, 1f) > 0.5f)
-            {
-                GameEvents.instance.EnemyDeath();
-                GameEvents.instance.Slomo();
-            }
-            EnableRagdoll(true);
-        }
-
         if (_nav.isActiveAndEnabled)
         {
             if (Time.frameCount % _frameInterval == 0)
@@ -220,7 +209,7 @@ public class TakeCoverAI : MonoBehaviour, ITakeDamage
     public void TakeDamage(Weapon weapon, Projectile projectile, Vector3 contactPoint)
     {
         health -= weapon.GetDamage();
-        if (health <= 0)
+        if (health <= 0 && !_isDead)
         {
             if (Random.Range(0, 1f) > 0.5f)
             {
@@ -228,7 +217,6 @@ public class TakeCoverAI : MonoBehaviour, ITakeDamage
                 GameEvents.instance.Slomo();
             }
             EnableRagdoll(true);
-            Destroy(gameObject);
         }
         else
         {

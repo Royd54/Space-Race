@@ -10,14 +10,8 @@ public class HandSounds : XRDirectInteractor
     [SerializeField] private AudioClip _pickupSoundFX;
     [SerializeField] private AudioClip _bagGrabFX;
     [SerializeField] private AudioClip _bagSlotFX;
-    [SerializeField] private AudioClip _chosenSong;
 
     private GameObject _inSocket = null;
-
-    private void Start()
-    {
-        PlayChosenSong();
-    }
 
     protected override void OnSelectEnter(XRBaseInteractable interactable)
     {
@@ -38,13 +32,5 @@ public class HandSounds : XRDirectInteractor
     private void OnTriggerStay(Collider other)
     {
             _inSocket = other.gameObject;
-    }
-
-    public void PlayChosenSong()
-    {
-        if (!AudioManager.Instance.MusicIsPlaying())
-        {
-            AudioManager.Instance.PlayMusicWithFade(_chosenSong);
-        }
     }
 }

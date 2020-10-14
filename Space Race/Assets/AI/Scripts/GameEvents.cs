@@ -29,4 +29,13 @@ public class GameEvents : MonoBehaviour
             onSlomo();
         }
     }
+
+    public event Action onLightstrigger;
+    public void LightsTrigger()
+    {
+        if (onLightstrigger != null)
+        {
+            onLightstrigger();
+        }
+    }
 }

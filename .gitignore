@@ -3099,3 +3099,6 @@ Space Race/Assets/PolygonSciFiSpace/Prefabs/Signs/SM_SignBorder_Warning_01.prefa
 Space Race/Assets/PolygonSciFiSpace/Prefabs/Signs/SM_SignBorder_Water_01.prefab
 Space Race/Library/Artifacts/1d/1d8feb760f328f9afd3074fddb953eaa
 *.log
+*.log
+*.dll
+*.log

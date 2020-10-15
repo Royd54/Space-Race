@@ -3102,3 +3102,8 @@ Space Race/Library/Artifacts/1d/1d8feb760f328f9afd3074fddb953eaa
 *.log
 *.dll
 *.log
+*.meta
+*.asset
+*.umbracache
+*.json
+*.log

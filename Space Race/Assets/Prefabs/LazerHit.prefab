@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8864192938068532944}
   - component: {fileID: 8777126158955292052}
   - component: {fileID: 8777364395222788544}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: FX_Grenade_Explosive_Ember_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4563,7 +4563,7 @@ GameObject:
   - component: {fileID: 8776478901003524040}
   - component: {fileID: 8775628522887924704}
   - component: {fileID: 3258244967147671331}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: LazerHit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8311,7 +8311,7 @@ ParticleSystem:
     radiusScale: 1
     collidesWith:
       serializedVersion: 2
-      m_Bits: 4294967295
+      m_Bits: 294711
     maxCollisionShapes: 256
     quality: 0
     voxelSize: 0.5
@@ -9357,7 +9357,7 @@ GameObject:
   - component: {fileID: 8871233238135722412}
   - component: {fileID: 8776864547585382608}
   - component: {fileID: 8775469843010668298}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: FX_Grenade_Explosive_Debris_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14115,7 +14115,7 @@ GameObject:
   - component: {fileID: 8870969140584256770}
   - component: {fileID: 8776930921365499308}
   - component: {fileID: 8777417425303794918}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: FX_Grenade_Explosive_Smoke_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18891,7 +18891,7 @@ GameObject:
   - component: {fileID: 8863860059565947792}
   - component: {fileID: 8777157519725241700}
   - component: {fileID: 8775730355414765648}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: FX_Grenade_Explosive_Fire_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23711,7 +23711,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8871278844950114364}
   - component: {fileID: 8831408697011062104}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: FX_Grenade_Explosive_Light_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}

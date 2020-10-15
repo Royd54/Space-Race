@@ -13,7 +13,7 @@ public class Player : MonoBehaviour, ITakeDamage
 
     private void FixedUpdate()
     {
-        playerPos = transform.position;
+        playerPos = head.position;
     }
 
     public void TakeDamage(float damage)

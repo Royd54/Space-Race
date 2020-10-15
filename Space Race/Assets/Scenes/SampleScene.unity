@@ -138,7 +138,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &36284619
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -162,7 +162,7 @@ MonoBehaviour:
   _player: {fileID: 1681699510}
   _enemyMultiplier: 1.5
   _spawnIntervalMultiplier: 0.8
-  _enemyCount: 0
+  _enemyCount: 1
   _currentEnemyCount: 0
 --- !u!4 &36284620
 Transform:
@@ -4280,7 +4280,7 @@ BoxCollider:
   m_GameObject: {fileID: 1924540979}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 10, y: 10, z: 10}
   m_Center: {x: 0, y: 0, z: 0}
@@ -7617,7 +7617,7 @@ PrefabInstance:
     - target: {fileID: 6079332911533353964, guid: 33e64ff7e65c3dd44b8d7efbd5a4bb02,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 7.12
       objectReference: {fileID: 0}
     - target: {fileID: 6079332911533353964, guid: 33e64ff7e65c3dd44b8d7efbd5a4bb02,
         type: 3}

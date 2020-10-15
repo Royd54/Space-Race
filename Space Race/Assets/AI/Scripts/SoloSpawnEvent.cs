@@ -27,8 +27,11 @@ public class SoloSpawnEvent : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject == _player.gameObject) SpawnEnemy();
-        GameEvents.instance.LightsTrigger();
+        if (other.gameObject == _player.gameObject)
+        {
+            SpawnEnemy();
+            GameEvents.instance.LightsTrigger();
+        }
     }
 
     private void SpawnEnemy()
@@ -38,8 +41,8 @@ public class SoloSpawnEvent : MonoBehaviour
             timeSinceLastSpawn = 0f;
             if (spawnedEnemies.Count < _maxEnemiesNumber)
             {
-                TakeCoverAI enemy = Instantiate(_enemyPrefab, transform.position, transform.rotation);
                 int spawnPointindex = spawnedEnemies.Count % _spawnPoints.Length;
+                TakeCoverAI enemy = Instantiate(_enemyPrefab, _spawnPoints[spawnPointindex].position, transform.rotation);
                 enemy.Init(_player, _spawnPoints[spawnPointindex]);
                 spawnedEnemies.Add(enemy);
             }

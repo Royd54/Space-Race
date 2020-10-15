@@ -77,8 +77,8 @@ public class TakeCoverAI : MonoBehaviour, ITakeDamage
 
     public void Init(Player player, Transform spawnpoint)
     {
-        this._player = player;
         transform.position = spawnpoint.position;
+        this._player = player;
     }
 
     private void Update()

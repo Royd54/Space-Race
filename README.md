@@ -43,7 +43,7 @@ The player is also able to put on hats, or put the backpack on their back. This 
 
 ### Dialogue system
 [Dialogue](https://github.com/Royd54/Space-Race/blob/master/Space%20Race/Assets/DailogueWithAudio/Scripts/Dialogue.cs), 
-[DialogueManager(https://github.com/Royd54/SpaceRace/blob/master/Space%20Race/Assets/DailogueWithAudio/Scripts/DialogueManager.cs), 
+[DialogueManager](https://github.com/Royd54/SpaceRace/blob/master/Space%20Race/Assets/DailogueWithAudio/Scripts/DialogueManager.cs), 
 [DialogueTrigger](https://github.com/Royd54/Space-Race/blob/master/Space%20Race/Assets/DailogueWithAudio/Scripts/DialogueTrigger.cs)
 The dialogue class has 2 simple arrays, that contain sentences and audioclips for these sentences.
 The dialoguemanager then works with these values. When a dialogue gets triggered the dialoguetrigger class starts the dialogue, and shuts down the collider/trigger. After this, the dialoguemanager start typing the sentence on a canvas letter for letter. While typing it also plays the first audioclip in the que. When the sentence and the audioclip are done, the next sentence and auioclip get played. If there is none of these left, the canvas will dissapear.
